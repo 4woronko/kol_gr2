@@ -24,15 +24,16 @@ class Matrix(object) :
 		for row in self.__matrix :
 			temp_string+=str(row) + '\n'
 		return temp_string
+
 	def __add__(self,matrix_to_add):
 		return self.__add(matrix_to_add)
-			
+
 	def __radd__(self,matrix_to_add):
 		return self.__add(matrix_to_add)
-			
+
 	def __mul__(self,to_multiply_by):
 		return self.__multiply(to_multiply_by);
-		
+
 	def __rmul__(self,to_multiply_by) :
 		result = 0
 		if isinstance(to_multiply_by,Matrix) :
@@ -40,14 +41,14 @@ class Matrix(object) :
 		else :
 			result = self.__multiply(to_multiply_by)
 		return result
-		
+
 	def __len__(self) :
 		return self.__size
-		
+
 	def __iter__(self) :
 		for row in self.__matrix :
 			yield row
-			
+
 	def __add(self,matrix_to_add):
 		if isinstance(matrix_to_add,Matrix) :
 			if len(self) == len(matrix_to_add) :
@@ -79,9 +80,10 @@ class Matrix(object) :
 			return result_matrix
 		else :
 			raise TypeError("Wrong argument type - you can only multiply a matrix by a matrix or a number")
-			
+
 	def __getitem__(self,i) :
 		if i < self.__size :
 			return self.__matrix[i]
 		else :
 			raise IndexError("Row index out of range")
+
