@@ -1,30 +1,24 @@
 #!/usr/bin/env python
 
-class Matrix:
-	
-	def __init__(self,elem11,elem12,elem21,elem22):
-		self.__M11 = elem11
-		self.__M12 = elem12
-		self.__M21 = elem21
-		self.__M22 = elem22
+from Matrix import Matrix
 
-	def __str__(self):
-		return str(self.__M11) + ' ' + str(self.__M12) + '\n' + str(self.__M21) + ' ' + str(self.__M22)
-
-	def add(self,matrix2):
-		return Matrix(self.__M11+matrix2.__M11,self.__M12+matrix2.__M12,self.__M21+matrix2.__M21,self.__M22+matrix2.__M22)
-
-	def multiply(self,matrix2):
-		return Matrix(self.__M11*matrix2.__M11 + self.__M12*matrix2.__M21,self.__M11*matrix2.__M12+self.__M12*matrix2.__M22,self.__M21*matrix2.__M11+self.__M22*matrix2.__M21,self.__M21*matrix2.__M12+self.__M22*matrix2.__M22)
-		
-
-
+def main() :
+	A = Matrix(1,2,3,4,5,6,7,8,9)
+	B = Matrix(2,3,4,5,6,7,8,9,10)
+	print "Macierz A"
+	print A
+	print "Macierz B"
+	print B
+	print "Suma macierzy A i B"
+	print A+B
+	print "Iloczyn macierzy A i B"
+	print A*B
+	print "Iloczyn macierzy B i A"
+	print B*A
+	print "Iloczyn macierzy A i 5"
+	print A*5
 
 
-m=Matrix(1,2,3,4)
-print m
-n = Matrix(2,3,4,5)
-print
-print m.add(n)
-print
-print m.multiply(n)
+if __name__ == "__main__":
+	main()
+
