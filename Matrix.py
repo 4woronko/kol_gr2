@@ -31,14 +31,14 @@ class Matrix(object) :
 		return self.__add(matrix_to_add)
 			
 	def __mul__(self,to_multiply_by):
-		return self.__mul(to_multiply_by);
+		return self.__multiply(to_multiply_by);
 		
 	def __rmul__(self,to_multiply_by) :
 		result = 0
 		if isinstance(to_multiply_by,Matrix) :
-			result = to_multiply_by.__mul(self)
+			result = to_multiply_by.__multiply(self)
 		else :
-			result = self.__mul(to_multiply_by)
+			result = self.__multiply(to_multiply_by)
 		return result
 		
 	def __len__(self) :
@@ -61,7 +61,7 @@ class Matrix(object) :
 		else :
 			raise TypeError("Wrong argument type - you can only add a matrix to a matrix")
 
-	def __mul(self,to_multiply_by) :
+	def __multiply(self,to_multiply_by) :
 		if isinstance(to_multiply_by,Matrix) :
 			if len(self) == len(to_multiply_by) :
 				result_matrix = deepcopy(self)
