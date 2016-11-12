@@ -5,6 +5,7 @@ from copy import deepcopy
 import numbers
 
 class Matrix(object) :
+
 	def __init__(self, *vector) :
 		size = sqrt(len(vector))
 		if(size == int(size)) :
